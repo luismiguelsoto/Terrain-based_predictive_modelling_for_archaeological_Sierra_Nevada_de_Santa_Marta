@@ -22,9 +22,6 @@ Repository Structure:
      c) Perform predictor selection, model fitting, spatial and nested cross-validation, calibration and external evaluation.
      d) Generate Figures 1 through 11 and Tables 1 through 4 as presented in the manuscript.
 
-3. HTML Report:
-   - AP_PREDICTIVE_MODEL.html contains the rendered output of the notebook, with the numerical summary of each figure.
-
 Software and Key Package Versions:
 ----------------------------------
 - R version: 4.6.1
@@ -74,7 +71,6 @@ Getting Started:
 3. Set the folder with the RData files as the environment variable `AP_PROJECT_DIR`, for example with `Sys.setenv(AP_PROJECT_DIR = "path/to/RData")`.
 4. Set `XGB_PYTHON` as described above. WhiteboxTools is installed automatically if it is missing.
 5. Knit the notebook to HTML, or run its chunks sequentially, to reproduce the analysis and generate all figures and tables.
-6. Check the reproducibility table printed with Figure 2. A faithful rerun reproduces the specification hash e40720e0d80a and the results fingerprint 753d0496dc0de77f36eb4e212c1b664f5fd4cd5a41aff3a54507a3e272b8a764.
 
 Manuscript Summary:
 ----------------------------------
