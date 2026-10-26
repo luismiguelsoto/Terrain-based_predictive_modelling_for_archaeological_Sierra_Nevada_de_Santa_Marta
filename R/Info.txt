@@ -1,1 +1,1 @@
-
+This repository contains the R Notebook that reproduces the results presented in the manuscript titled "Terrain-based predictive modeling for archaeological prospecting in the Sierra Nevada de Santa Marta, Colombia." This R Notebook, named “AP_PREDICTIVE_MODEL,” is already configured to call the RData files located in the Zenodo repository “https://zenodo.org/records/23652371”
