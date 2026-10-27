@@ -9,27 +9,13 @@ Data Archive:
 
 Repository Structure:
 ----------------------------------
-1. RData:
-   - Contains copies of seven of the eight spatial inputs. Each file holds one R object, and raster objects are stored as packed terra objects. The notebook uses a local copy only when the download from Zenodo fails, and only when its MD5 matches the Zenodo record:
-     • dem_full (Regional elevation model, SRTM elevations resampled to 12.5 m)
-     • poly52 (Río Frío survey polygon, 52.2 km²)
-     • grid_raw (Half-hectare survey grid, 10,733 cells, 1,131 with terraces)
-     • ref_all_structures (3,500 recorded structures used as visibility observers, including the 2,526 terraces inside the Río Frío survey polygon)
-     • buritaca_200 (159 terraces at Buritaca 200, used for external evaluation)
-     • rivers (Hydrographic network, used only for maps)
-     • canopy_raw (ETH canopy height, secondary land cover model)
-     • s2_raw (Sentinel-2 indices, secondary land cover model, 153 MB, available only in the Zenodo record)
-
-2. R Code Files:
-   - The main R notebook (AP_PREDICTIVE_MODEL_V13.Rmd) contains the code to:
+1. R Code Files:
+   - The main R notebook (AP_PREDICTIVE_MODEL.Rmd) contains the code to:
      a) Load required packages, configure the environment and check the CUDA device.
      b) Download the eight inputs from Zenodo, verify their MD5 checksums and derive the terrain predictors with WhiteboxTools.
      c) Perform predictor selection, model fitting, spatial and nested cross-validation, calibration and external evaluation.
      d) Generate Figures 1 through 11 and Tables 1 through 4 as presented in the manuscript, with the numerical summary of Figures 2 through 11.
      e) Record the computing environment, the analysis parameters, every pipeline step and the fingerprints that a rerun must reproduce.
-
-3. Rendered Report:
-   - AP_PREDICTIVE_MODEL_V13.pdf is the report of the reference run, with every figure, table and numerical summary.
 
 Software and Key Package Versions:
 ----------------------------------
@@ -78,11 +64,9 @@ Hardware Requirements:
 Getting Started:
 ----------------------------------
 1. Clone or download this repository.
-2. Open AP_PREDICTIVE_MODEL_V13.Rmd in RStudio, and set Tools > Global Options > General > Graphics > Backend to AGG.
+2. Open AP_PREDICTIVE_MODEL.Rmd in RStudio, and set Tools > Global Options > General > Graphics > Backend to AGG.
 3. Set `XGB_PYTHON` as described above. WhiteboxTools is installed automatically if it is missing, and the report records its version.
 4. Knit the notebook. The default output is PDF, which needs a LaTeX distribution with xelatex such as TinyTeX. HTML and Word outputs are also available.
-5. The notebook downloads the eight inputs from Zenodo, about 167 MB, when the run starts. Without internet, place the eight RData files in one folder and set it as the environment variable `AP_PROJECT_DIR`, for example with `Sys.setenv(AP_PROJECT_DIR = "path/to/RData")`.
-6. Compare the reproducibility record printed under Fig. 2 with the reference values given below.
 
 Reproducibility:
 ----------------------------------
